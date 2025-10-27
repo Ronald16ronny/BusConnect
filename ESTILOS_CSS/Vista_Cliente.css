@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.cabesera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 100px 30px;
+    background: url('../IMAGENES/miraflores-lima-city.jpg') no-repeat center center/cover;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.cabesera .logo,
+.cabesera nav {
+    position: relative;
+    top: -60px; /* ajusta -30, -50 según prefieras */
+}
+.cabesera .logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start; /* Usa flex-start si lo quieres a la izquierda*/
+  padding: 10px;
+}
+
+.logo img{
+    width: 250px;    /* Ajusta el ancho del logo */
+    height: auto; 
+   
+}
+
+.cabesera nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.cabesera nav a:hover {
+    color: #dcdcdc;
+}
+
+.boton_rastrear {
+    background-color: #0cd4ea;
+    padding: 8px 15px;
+    border-radius: 4px;
+    color: white;
+}
+
+.icono_perfil{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* 2. SECCIÓN HERO (Fondo de Ciudad) */
+.seccion_hero{
+    height: 250px; /* Altura de la sección de fondo */
+    position: relative;
+    padding-top: 100px; /* Espacio para el saludo y la tarjeta */
+}
+
+.contenedor_superpuesto{
+    /* Oscurece ligeramente el fondo para mejorar la legibilidad del texto */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: rgba(0, 0, 0, 0.2);  Opcional, si la imagen es muy brillante */
+    padding: 20px 5%;
+}
+
+.saludo{
+    font-size: 36px;
+    color: white;
+    font-weight: 300;
+    margin-bottom: 20px;
+    position: relative;
+    top: -50px; /* Sube el saludo para que esté sobre la ciudad */
+}
+
+
+.carta_perfil{
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    position: relative;
+    top: -100px; /* La tarjeta se superpone sobre la sección de la ciudad */
+    z-index: 10;
+}
+
+.cabesera_perfil{
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--gray-bg);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+
+.informacion_usuario{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.informacion_usuario strong{
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.informacion_usuario span{
+    font-size: 13px;
+    color: #666;
+}
+
+.editar_perfil{
+    color: #999;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.detalles_perfil .fila_detalle{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+.detalles_perfil .label{
+    color: #666;
+}
+
+.detalles_perfil .valor .link{
+    color: var(--primary-purple);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
