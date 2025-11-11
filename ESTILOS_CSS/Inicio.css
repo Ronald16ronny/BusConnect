@@ -1,0 +1,359 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(237, 251, 255);
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cabecera {
+  background-color: #c9fff7;
+  color: #00223d;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.container_cabecera {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.logo img {
+  width: 200px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav a {
+  color: #044478;
+  font-weight: 500;
+}
+
+.nav a.botonLogin {
+  background-color: #044478;
+  color: #c9fff7;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav a.botonLogin:hover {
+  background-color: white;
+  color: #044478;
+  transform: scale(1.08);
+}
+
+.primero {
+  color: #044478;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px auto;
+  max-width: 1100px;
+}
+
+.imagen-buses img {
+  width: 600px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.presentacion {
+  background-color: #c9fff7;
+  border-radius: 15px;
+  padding: 30px 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  max-width: 450px;
+  text-align: center;
+}
+
+.presentacion h2 {
+  font-size: 2rem;
+  color: #044478;
+  margin-bottom: 10px;
+}
+
+.presentacion p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+.info-buscador {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  color: #044478;
+}
+
+.buscador {
+  background-color: #fff;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 950px;
+  max-width: 95%;
+  margin: 20px auto 0;
+  position: relative;
+}
+
+.campo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  border-right: 1px solid #ddd;
+}
+
+.campo:last-child {
+  border-right: none;
+}
+
+label {
+  font-weight: bold;
+  color: #044478;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+input {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: #444;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+.buscar {
+  background: #044478;
+  border: none;
+  border-radius: 20px;
+  padding: 14px 18px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.buscar:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.turismo h2 {
+  margin-top: 60px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 30px;
+  color: #044478;
+}
+
+.lugares {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.lugar {
+  text-align: center;
+  color: #044478;
+  font-weight: bolder;
+}
+
+.lugar img {
+  width: 500px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.lugar img:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  background-color: #c9fff7;
+  color: #044478;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  flex-wrap: wrap;
+}
+
+.marca, .contactos, .redes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contactos a, .correo {
+  color: #044478;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.correo:hover {
+  transform: scale(1.08);
+}
+
+.redes img {
+  width: 28px;
+  height: 28px;
+  transition: all 0.3s ease;
+}
+
+.redes img:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+  .container_cabecera {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .botonLogin {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .primero {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .info {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+    margin: 30px 10px;
+  }
+
+  .imagen-buses img {
+    width: 100%;
+  }
+
+  .presentacion {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .buscador {
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    padding: 25px;
+    width: 85%;
+    margin: 30px auto;
+    box-sizing: border-box;
+  }
+
+  .campo {
+    border: none;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .buscar {
+    width: 60%; 
+    margin: 15px auto 0;
+    display: block;
+    text-align: center;
+    border-radius: 25px;
+  }
+
+  .turismo h2 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .lugares {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-items: center;
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 95%;
+    box-sizing: border-box;
+  }
+
+  .lugar img {
+    width: 100%;
+    max-width: 170px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .lugar img:hover {
+    transform: scale(1.05);
+  }
+
+  .lugar p {
+    font-size: 14px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .redes img {
+    width: 24px;
+    height: 24px;
+  }
+}
+

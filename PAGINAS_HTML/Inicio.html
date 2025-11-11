@@ -1,11 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="../ESTILOS_CSS/Inicio.css">
+  <link rel="icon" type="image/png" href="../IMAGENES/logo.png">
+  <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+  <!-- CABECERA -->
+  <header class="cabecera">
+    <div class="container_cabecera">
+      <div class="logo">
+        <img src="../IMAGENES/logo.png" alt="Logo ReservaBuses">
+      </div>
+      <nav class="nav">
+        <a href="#" style="color: #044478; font-weight: bold;">Inicio</a>
+        <a href="#">Reservar</a>
+        <a href="#">Envíos</a>
+        <a href="#" class="botonLogin">Registrarse</a>
+      </nav>
+    </div>
+  </header>
+  <div class="primero">
+    <h1>BUS CONNECT</h1>
+  </div>
+  <div class="info">
+    <div class="imagen-buses">
+      <img src="../IMAGENES/4DOR55LMAZHZBLGZGJHWZOZOBI.avif" alt="Imagen de buses">
+    </div>
+    <div class="presentacion">
+      <h2>¿QUIÉNES SOMOS?</h2>
+      <p>Somos una empresa dedicada a brindar el mejor servicio de transporte interprovincial, garantizando comodidad, seguridad y puntualidad en cada viaje.</p>
+    </div>
+  </div>
+  <div class="info-buscador">
+    <h2>RESERVA TU VIAJE AQUÍ:</h2>
+  </div>
+
+  <div class="buscador">
+    <div class="campo">
+      <label><i class="fa-solid fa-location-dot"></i> Origen</label>
+      <input type="text" placeholder="Ingrese una ciudad">
+    </div>
+    <div class="campo">
+      <label><i class="fa-solid fa-location-dot"></i> Destino</label>
+      <input type="text" placeholder="Ingrese el destino">
+    </div>
+    <div class="campo">
+      <label><i class="fa-solid fa-calendar-day"></i> Salida</label>
+      <input type="date" value="2025-11-02">
+    </div>
+    <div class="campo">
+      <label><i class="fa-solid fa-calendar-day"></i> Retorno</label>
+      <input type="date" placeholder="Opcional">
+    </div>
+    <button class="buscar"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+  </div>
+  <div class="turismo">
+    <h2>LUGARES TURÍSTICOS MÁS VISITADOS</h2>
+    <div class="lugares">
+
+      <div class="lugar">
+        <img src="../IMAGENES/Machu_Picchu,_Peru-1280x720.jpg" alt="Machu Picchu - Cusco">
+        <p>Machu Picchu - Cusco</p>
+      </div>
+
+      <div class="lugar">
+        <img src="../IMAGENES/lago-titicaca-1280x720.jpg" alt="Lago Titicaca - Puno">
+        <p>Lago Titicaca - Puno</p>
+      </div>
+
+      <div class="lugar">
+        <img src="../IMAGENES/Valley_of_Colca_River,_Peru-1280x720.jpg" alt="Valle del Colca - Arequipa">
+        <p>Valle del Colca - Arequipa</p>
+      </div>
+
+      <div class="lugar">
+        <img src="../IMAGENES/d5c7611f-city-2270-16441b01e36-1280x720.jpg" alt="Costa Verde - Lima">
+        <p>Costa Verde - Lima</p>
+      </div>
+
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="marca">
+      <p>© 2025 BusConnect</p>
+    </div>
+    <div class="contactos">
+      <p>
+        <a href="mailto:busconnect@reservabuses.pe" class="correo">busconnect@reservabuses.pe</a>
+      </p>
+    </div>
+    <div class="redes">
+      <a href="#"><img src="../IMAGENES/facebook.png" alt="facebook"></a>
+      <a href="#"><img src="../IMAGENES/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="../IMAGENES/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="../IMAGENES/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="../IMAGENES/whatsapp.png" alt="WhatsApp"></a>
+    </div>
+  </footer>
 </body>
 </html>
