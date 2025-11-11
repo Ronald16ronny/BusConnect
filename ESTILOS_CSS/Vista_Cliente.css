@@ -92,23 +92,24 @@
 
 .carta_perfil{
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 15);
+    max-width: 500px;
     position: relative;
-    top: -100px; /* La tarjeta se superpone sobre la sección de la ciudad */
-    z-index: 10;
+    top: -90px; /* La tarjeta se superpone sobre la sección de la ciudad */
 }
 
 .cabesera_perfil{
     display: flex;
-    align-items: flex-start;
-    border-bottom: 1px solid var(--gray-bg);
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid var(#e4e4e4);
     padding-bottom: 15px;
-    margin-bottom: 15px;
 }
 
+
+/**/
 .avatar {
     border-radius: 50%;
     width: 60px;
