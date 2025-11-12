@@ -1,11 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envíos</title>
+  <link rel="stylesheet" href="../ESTILOS_CSS/Inicio.css">
+  <link rel="stylesheet" href="../ESTILOS_CSS/Envios.css">
+  <link rel="icon" type="image/png" href="../IMAGENES/logo.png">
 </head>
+
 <body>
-    <p>holaaaa</p>
+  <!-- CABECERA (reutilizada de Inicio) -->
+  <header class="cabecera">
+    <div class="container_cabecera">
+      <div class="logo">
+        <img src="../IMAGENES/logo.png" alt="Logo ReservaBuses">
+      </div>
+      <nav class="nav">
+        <a href="../PAGINAS_HTML/Inicio.html">Inicio</a>
+        <a href="../PAGINAS_HTML/Reserva_Pasaje.html">Reservar</a>
+        <a href="../PAGINAS_HTML/Envios.html" style="color: #044478; font-weight: bold;">Envíos</a>
+        <a href="../PAGINAS_HTML/Registro.html" class="botonLogin">Registrarse</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="envios-main">
+    <!-- HERO / PRESENTACIÓN -->
+    <section class="hero-envios">
+      <div class="hero-texto">
+        <h1>Envíos rápidos, seguros y fáciles</h1>
+        <p>Gestiona paquetes, documentos y carga con seguimiento en tiempo real.</p>
+        <div class="acciones">
+          <a href="#cotizador" class="btn btn-primario">Cotizar un envío</a>
+          <a href="#seguimiento" class="btn btn-secundario">Rastrear paquete</a>
+        </div>
+      </div>
+      <div class="hero-grafico" aria-hidden="true">
+        <div class="caja flotante f1"></div>
+        <div class="caja flotante f2"></div>
+        <div class="caja flotante f3"></div>
+        <img src="../IMAGENES/buses.jpg" alt="Ilustración camión de envíos" class="img-hero">
+      </div>
+    </section>
+
+    <!-- SERVICIOS EN CARDS (Grid) -->
+    <section class="servicios">
+      <h2>Nuestros servicios de envío</h2>
+      <div class="servicios-grid">
+        <article class="card-servicio">
+          <h3>Paquetería</h3>
+          <p>Para cajas pequeñas y medianas. Ideal para compras y regalos.</p>
+        </article>
+        <article class="card-servicio">
+          <h3>Documentos</h3>
+          <p>Entrega prioritaria y segura de sobres y trámites importantes.</p>
+        </article>
+        <article class="card-servicio">
+          <h3>Carga</h3>
+          <p>Volúmenes grandes o pesados. Logística a medida.</p>
+        </article>
+        <article class="card-servicio">
+          <h3>Envío urgente</h3>
+          <p>La opción más rápida para entregas en el menor tiempo.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- COTIZADOR (Flex + Grid + JS básico) -->
+    <section id="cotizador" class="cotizador">
+      <h2>Calcula tu envío</h2>
+      <form id="formCotizar" class="form-grid" autocomplete="off">
+        <div class="campo-envio">
+          <label for="origen">Origen</label>
+          <input id="origen" name="origen" type="text" placeholder="Ciudad de origen">
+        </div>
+        <div class="campo-envio">
+          <label for="destino">Destino</label>
+          <input id="destino" name="destino" type="text" placeholder="Ciudad de destino">
+        </div>
+        <div class="campo-envio">
+          <label for="peso">Peso (kg)</label>
+          <input id="peso" name="peso" type="number" min="0" step="0.1" placeholder="Ej: 2.5">
+        </div>
+        <div class="campo-envio">
+          <label for="largo">Largo (cm)</label>
+          <input id="largo" name="largo" type="number" min="0" step="0.1" placeholder="Ej: 30">
+        </div>
+        <div class="campo-envio">
+          <label for="ancho">Ancho (cm)</label>
+          <input id="ancho" name="ancho" type="number" min="0" step="0.1" placeholder="Ej: 20">
+        </div>
+        <div class="campo-envio">
+          <label for="alto">Alto (cm)</label>
+          <input id="alto" name="alto" type="number" min="0" step="0.1" placeholder="Ej: 15">
+        </div>
+        <div class="campo-envio">
+          <label for="tipo">Tipo de envío</label>
+          <select id="tipo" name="tipo">
+            <option value="estandar">Estándar</option>
+            <option value="urgente">Urgente</option>
+          </select>
+        </div>
+        <div class="acciones-form">
+          <button type="submit" class="btn btn-primario">Calcular estimado</button>
+          <button type="reset" class="btn btn-secundario">Limpiar</button>
+        </div>
+      </form>
+      <div id="resultado" class="resultado" aria-live="polite"></div>
+    </section>
+
+    <!-- SEGUIMIENTO (JS básico: prompt, alert) -->
+    <section id="seguimiento" class="seguimiento">
+      <h2>Rastrea tu paquete</h2>
+      <div class="seguimiento-box">
+        <input id="codigoSeguimiento" type="text" placeholder="Ingresa tu código de seguimiento">
+        <button id="btnRastrear" class="btn btn-primario">Buscar</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA (reutilizado de Inicio) -->
+  <footer class="footer">
+    <div class="marca">
+      <p>© 2025 BusConnect</p>
+    </div>
+    <div class="contactos">
+      <p>
+        <a href="mailto:busconnect@reservabuses.pe" class="correo">busconnect@reservabuses.pe</a>
+      </p>
+    </div>
+    <div class="redes">
+      <a href="#"><img src="../IMAGENES/facebook.png" alt="facebook"></a>
+      <a href="#"><img src="../IMAGENES/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="../IMAGENES/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="../IMAGENES/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="../IMAGENES/whatsapp.png" alt="WhatsApp"></a>
+    </div>
+  </footer>
+
+  <script>
+    // JS básico: variables, constantes, arreglos, operadores, prompt/confirm/alert y manipulación del DOM
+    const form = document.getElementById('formCotizar');
+    const resultado = document.getElementById('resultado');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const origen = document.getElementById('origen').value.trim();
+      const destino = document.getElementById('destino').value.trim();
+      const peso = parseFloat(document.getElementById('peso').value) || 0;
+      const largo = parseFloat(document.getElementById('largo').value) || 0;
+      const ancho = parseFloat(document.getElementById('ancho').value) || 0;
+      const alto = parseFloat(document.getElementById('alto').value) || 0;
+      const tipo = document.getElementById('tipo').value;
+
+      if (!origen || !destino) {
+        alert('Por favor, completa Origen y Destino.');
+        return;
+      }
+
+      // Solicitar distancia vía prompt para practicar entrada de datos
+      let distancia = prompt('¿Cuántos km hay entre ' + origen + ' y ' + destino + '?', '100');
+      distancia = parseFloat(distancia);
+      if (isNaN(distancia) || distancia < 0) {
+        alert('Distancia no válida. Intenta nuevamente.');
+        return;
+      }
+
+      // Calculo sencillo de ejemplo (no real):
+      // precio = base + (peso * 2) + (volumen_cm3 * 0.002) + (distancia * 0.1)
+      // urgente suma 25% adicional
+      const volumen = largo * ancho * alto; // cm3
+      let precio = 8 + (peso * 2) + (volumen * 0.002) + (distancia * 0.1);
+      if (tipo === 'urgente') precio *= 1.25;
+
+      const confirmar = confirm('Estimado: S/ ' + precio.toFixed(2) + '\n¿Deseas ver el detalle en pantalla?');
+      if (confirmar) {
+        resultado.innerHTML = `
+          <div class="detalle-precio">
+            <h3>Resumen del envío</h3>
+            <ul>
+              <li><strong>Origen:</strong> ${origen}</li>
+              <li><strong>Destino:</strong> ${destino}</li>
+              <li><strong>Peso:</strong> ${peso} kg</li>
+              <li><strong>Dimensiones:</strong> ${largo} x ${ancho} x ${alto} cm</li>
+              <li><strong>Tipo:</strong> ${tipo}</li>
+            </ul>
+            <p class="precio">Total estimado: <span>S/ ${precio.toFixed(2)}</span></p>
+          </div>
+        `;
+        resultado.classList.add('mostrar');
+        resultado.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        alert('Puedes ajustar los datos y recalcular cuando gustes.');
+      }
+    });
+
+    // Seguimiento con pequeño arreglo de estados
+    const estados = ['En agencia', 'En tránsito', 'En reparto', 'Entregado'];
+    document.getElementById('btnRastrear').addEventListener('click', function () {
+      let codigo = document.getElementById('codigoSeguimiento').value.trim();
+      if (!codigo) {
+        codigo = prompt('Ingresa tu código de seguimiento:');
+      }
+      if (!codigo) {
+        alert('Debes ingresar un código.');
+        return;
+      }
+      const idx = Math.floor(Math.random() * estados.length); // estructura de control y operadores
+      alert('Código ' + codigo + ': ' + estados[idx]);
+    });
+  </script>
 </body>
 </html>
