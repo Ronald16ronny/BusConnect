@@ -20,7 +20,7 @@ body {
 .cabecera {
     width: 100%;
     height: 260px;
-    background: url('../IMAGENES/miraflores-lima-city.jpg') no-repeat center center/cover;
+    background: url('../IMG/miraflores-lima-city.jpg') no-repeat center center/cover;
     position: relative;
     display: flex;
     align-items: flex-start;
