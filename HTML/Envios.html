@@ -6,6 +6,7 @@
   <title>Envíos</title>
   <link rel="stylesheet" href="../CSS/Inicio.css">
   <link rel="stylesheet" href="../CSS/Envios.css">
+  <link rel="icon" type="image/png" href="../IMG/logo.png">
 </head>
 
 <body>
@@ -13,13 +14,13 @@
   <header class="cabecera">
     <div class="container_cabecera">
       <div class="logo">
-        <img src="../IMG/Gemini_Generated_Image_35vftd35vftd35vf-removebg-preview (1).png" alt="Logo ReservaBuses">
+        <img src="../IMG/Gemini_Generated_Image_35vftd35vftd35vf-removebg-preview (1).png" alt="Logo BusConnect">
       </div>
       <nav class="nav">
-        <a href="../HTML/Inicio.html">Inicio</a>
-        <a href="../HTML/Reserva_Pasaje.html">Reservar</a>
-        <a href="../HTML/Envios.html" style="color: #044478; font-weight: bold;">Envíos</a>
-        <a href="../HTML/Registro.html" class="botonLogin">Registrarse</a>
+        <a href="../PAGINAS_HTML/Inicio.html">Inicio</a>
+        <a href="../PAGINAS_HTML/Reserva_Pasaje.html">Reservar</a>
+        <a href="../PAGINAS_HTML/Envios.html" style="color: #044478; font-weight: bold;">Envíos</a>
+        <a href="../PAGINAS_HTML/Registro.html" class="botonLogin">Registrarse</a>
       </nav>
     </div>
   </header>
@@ -39,7 +40,7 @@
         <div class="caja flotante f1"></div>
         <div class="caja flotante f2"></div>
         <div class="caja flotante f3"></div>
-        <img src="../IMG/buses.jpg" alt="Ilustración camión de envíos" class="img-hero">
+        <img src="../IMG/Envios.png" alt="Ilustración camión de envíos" class="img-hero">
       </div>
     </section>
 
@@ -50,25 +51,37 @@
         <article class="card-servicio">
           <h3>Paquetería</h3>
           <p>Para cajas pequeñas y medianas. Ideal para compras y regalos.</p>
+          <div class="card-imagen">
+            <img src="../IMG/paqueteria.jpg" alt="Paquetería">
+          </div>
         </article>
         <article class="card-servicio">
           <h3>Documentos</h3>
           <p>Entrega prioritaria y segura de sobres y trámites importantes.</p>
+          <div class="card-imagen">
+            <img src="../IMG/documentos.webp" alt="Documentos">
+          </div>
         </article>
         <article class="card-servicio">
           <h3>Carga</h3>
           <p>Volúmenes grandes o pesados. Logística a medida.</p>
+          <div class="card-imagen">
+            <img src="../IMG/cargas.jpg" alt="Carga">
+          </div>
         </article>
         <article class="card-servicio">
           <h3>Envío urgente</h3>
           <p>La opción más rápida para entregas en el menor tiempo.</p>
+          <div class="card-imagen">
+            <img src="../IMG/enviosurgentes.png" alt="Envío urgente">
+          </div>
         </article>
       </div>
     </section>
 
     <!-- COTIZADOR (Flex + Grid + JS básico) -->
     <section id="cotizador" class="cotizador">
-      <h2>Calcula tu envío</h2>
+      <h2>CALCULA TU ENVÍO📪</h2>
       <form id="formCotizar" class="form-grid" autocomplete="off">
         <div class="campo-envio">
           <label for="origen">Origen</label>
@@ -111,10 +124,12 @@
 
     <!-- SEGUIMIENTO (JS básico: prompt, alert) -->
     <section id="seguimiento" class="seguimiento">
-      <h2>Rastrea tu paquete</h2>
-      <div class="seguimiento-box">
-        <input id="codigoSeguimiento" type="text" placeholder="Ingresa tu código de seguimiento">
-        <button id="btnRastrear" class="btn btn-primario">Buscar</button>
+      <h2>RASTREA TU PAQUETE🔎📦</h2>
+      <div class="seguimiento-panel">
+        <div class="seguimiento-box">
+          <input id="codigoSeguimiento" type="text" placeholder="Ingresa tu código de seguimiento">
+          <button id="btnRastrear" class="btn btn-primario">Buscar</button>
+        </div>
       </div>
     </section>
   </main>
@@ -130,7 +145,7 @@
       </p>
     </div>
     <div class="redes">
-      <a href="#"><img src="../IMG/facebook.png" alt="facebook"></a>
+      <a href="#"><img src="../IMG/facebook.png" alt="Facebook"></a>
       <a href="#"><img src="../IMG/youtube.png" alt="YouTube"></a>
       <a href="#"><img src="../IMG/twitter.png" alt="Twitter"></a>
       <a href="#"><img src="../IMG/instagram.png" alt="Instagram"></a>
@@ -138,6 +153,77 @@
     </div>
   </footer>
 
-  <script src="../JAVASCRIPT/Envios.js"></script>
+  <script>
+    // JS básico: variables, constantes, arreglos, operadores, prompt/confirm/alert y manipulación del DOM
+    const form = document.getElementById('formCotizar');
+    const resultado = document.getElementById('resultado');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const origen = document.getElementById('origen').value.trim();
+      const destino = document.getElementById('destino').value.trim();
+      const peso = parseFloat(document.getElementById('peso').value) || 0;
+      const largo = parseFloat(document.getElementById('largo').value) || 0;
+      const ancho = parseFloat(document.getElementById('ancho').value) || 0;
+      const alto = parseFloat(document.getElementById('alto').value) || 0;
+      const tipo = document.getElementById('tipo').value;
+
+      if (!origen || !destino) {
+        alert('Por favor, completa Origen y Destino.');
+        return;
+      }
+
+      // Solicitar distancia vía prompt para practicar entrada de datos
+      let distancia = prompt('¿Cuántos km hay entre ' + origen + ' y ' + destino + '?', '100');
+      distancia = parseFloat(distancia);
+      if (isNaN(distancia) || distancia < 0) {
+        alert('Distancia no válida. Intenta nuevamente.');
+        return;
+      }
+
+      // Cálculo sencillo de ejemplo (no real):
+      // precio = base + (peso * 2) + (volumen_cm3 * 0.002) + (distancia * 0.1)
+      // urgente suma 25% adicional
+      const volumen = largo * ancho * alto; // cm3
+      let precio = 8 + (peso * 2) + (volumen * 0.002) + (distancia * 0.1);
+      if (tipo === 'urgente') precio *= 1.25;
+
+      const confirmar = confirm('Estimado: S/ ' + precio.toFixed(2) + '\n¿Deseas ver el detalle en pantalla?');
+      if (confirmar) {
+        resultado.innerHTML = `
+          <div class="detalle-precio">
+            <h3>Resumen del envío</h3>
+            <ul>
+              <li><strong>Origen:</strong> ${origen}</li>
+              <li><strong>Destino:</strong> ${destino}</li>
+              <li><strong>Peso:</strong> ${peso} kg</li>
+              <li><strong>Dimensiones:</strong> ${largo} x ${ancho} x ${alto} cm</li>
+              <li><strong>Tipo:</strong> ${tipo}</li>
+            </ul>
+            <p class="precio">Total estimado: <span>S/ ${precio.toFixed(2)}</span></p>
+          </div>
+        `;
+        resultado.classList.add('mostrar');
+        resultado.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        alert('Puedes ajustar los datos y recalcular cuando gustes.');
+      }
+    });
+
+    // Seguimiento con pequeño arreglo de estados
+    const estados = ['En agencia', 'En tránsito', 'En reparto', 'Entregado'];
+    document.getElementById('btnRastrear').addEventListener('click', function () {
+      let codigo = document.getElementById('codigoSeguimiento').value.trim();
+      if (!codigo) {
+        codigo = prompt('Ingresa tu código de seguimiento:');
+      }
+      if (!codigo) {
+        alert('Debes ingresar un código.');
+        return;
+      }
+      const idx = Math.floor(Math.random() * estados.length); // estructura de control y operadores
+      alert('Código ' + codigo + ': ' + estados[idx]);
+    });
+  </script>
 </body>
 </html>
