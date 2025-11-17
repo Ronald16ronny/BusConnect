@@ -50,7 +50,7 @@ a {
   font-weight: 500;
 }
 
-.nav a.botonLogin {
+.header .nav a.botonLogin {
   background-color: #044478;
   color: #c9fff7;
   padding: 8px 16px;
