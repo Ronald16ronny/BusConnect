@@ -1,11 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Listado de Pasajes</title>
+  <link rel="stylesheet" href="../CSS/Reserva_Pasaje.css">
 </head>
 <body>
-    <p>hola</p>
+
+  <header></header>
+
+  <main class="contenedor">
+    <!-- FILTROS (izquierda) -->
+    <aside class="filtros">
+      <h3>Filtros</h3>
+
+      <div class="grupo-filtro">
+        <h4>Punto de embarque</h4>
+        <ul>
+          <li>Lima (28 de Julio)</li>
+          <li>Lima (Plaza Norte)</li>
+          <li>Lima (Hogar - Puente Piedra)</li>
+        </ul>
+      </div>
+
+      <div class="grupo-filtro">
+        <h4>Servicios</h4>
+        <ul>
+          <li>Económico</li>
+          <li>Exclusivo</li>
+          <li>Súper Exclusivo</li>
+        </ul>
+      </div>
+
+      <div class="grupo-filtro">
+        <h4>Hora de salida</h4>
+        <ul>
+          <li>Antes de 6 AM</li>
+          <li>6 AM - 12 PM</li>
+          <li>12 PM - 6 PM</li>
+          <li>Después de 6 PM</li>
+        </ul>
+      </div>
+
+      <div class="grupo-filtro">
+        <h4>Tipos de asiento</h4>
+        <ul>
+          <li>140°</li>
+          <li>160°</li>
+          <li>180°</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- RESULTADOS (centro) -->
+    <section class="resultados">
+
+      <!-- PASOS ARRIBA -->
+      <div class="pasos">
+        <div class="paso activo">1 Ida</div>
+        <div class="paso">2 Pago</div>
+        <div class="paso">3 Confirmación</div>
+      </div>
+
+      <!-- LISTA DE TARJETAS -->
+      <div class="lista-tarjetas">
+
+        <!-- TARJETAS - ECONÓMICO -->
+        <article class="tarjeta economico">
+          <span class="etiqueta-ubicacion">Lima (28 de Julio)</span>
+          <div class="contenido-tarjeta">
+            <div class="columna-izquierda">
+              <div class="logo-texto">SUPERBUSCONECT</div>
+              <div class="nombre-empresa">BusConnect</div>
+              <div class="tipo-servicio">Económico</div>
+            </div>
+
+            <div class="columna-centro">
+              <div class="fila"><span class="titulo">Salida</span><span class="dato">Mié, 12/11 • 12:00 PM</span></div>
+              <div class="fila"><span class="titulo">Asiento</span><span class="dato">140° • 160°</span></div>
+              <div class="fila"><span class="titulo">Disponibles</span><span class="dato">45 asientos</span></div>
+              <div class="fila"><span class="titulo">Duración</span><span class="dato">18 hrs aprox</span></div>
+            </div>
+
+            <div class="columna-derecha">
+              <div class="precios">
+                <span class="precio-actual">S/ 70</span>
+              </div>
+              <button class="boton-comprar">COMPRAR</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta economico">
+          <span class="etiqueta-ubicacion">Lima (Plaza Norte)</span>
+          <div class="contenido-tarjeta">
+            <div class="columna-izquierda">
+              <div class="logo-texto">SUPERBUSCONECT</div>
+              <div class="nombre-empresa">BusConnect</div>
+              <div class="tipo-servicio">Económico</div>
+            </div>
+
+            <div class="columna-centro">
+              <div class="fila"><span class="titulo">Salida</span><span class="dato">Mié, 12/11 • 13:30 PM</span></div>
+              <div class="fila"><span class="titulo">Asiento</span><span class="dato">140° • 160°</span></div>
+              <div class="fila"><span class="titulo">Disponibles</span><span class="dato">42 asientos</span></div>
+              <div class="fila"><span class="titulo">Duración</span><span class="dato">17 hrs aprox</span></div>
+            </div>
+
+            <div class="columna-derecha">
+              <div class="precios">
+                <span class="precio-actual">S/ 75</span>
+              </div>
+              <button class="boton-comprar">COMPRAR</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- TARJETAS - EXCLUSIVO -->
+        <article class="tarjeta exclusivo">
+          <span class="etiqueta-ubicacion">Lima (Hogar - Puente Piedra)</span>
+          <div class="contenido-tarjeta">
+            <div class="columna-izquierda">
+              <div class="logo-texto">SUPERBUSCONECT</div>
+              <div class="nombre-empresa">BusConnect</div>
+              <div class="tipo-servicio">Exclusivo</div>
+            </div>
+
+            <div class="columna-centro">
+              <div class="fila"><span class="titulo">Salida</span><span class="dato">Mié, 12/11 • 15:40 PM</span></div>
+              <div class="fila"><span class="titulo">Asiento</span><span class="dato">140° • 160°</span></div>
+              <div class="fila"><span class="titulo">Disponibles</span><span class="dato">38 asientos</span></div>
+              <div class="fila"><span class="titulo">Duración</span><span class="dato">17 hrs aprox</span></div>
+            </div>
+
+            <div class="columna-derecha">
+              <div class="precios">
+                <span class="precio-actual">S/ 90</span>
+              </div>
+              <button class="boton-comprar">COMPRAR</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta exclusivo">
+          <span class="etiqueta-ubicacion">Lima (Plaza Norte)</span>
+          <div class="contenido-tarjeta">
+            <div class="columna-izquierda">
+              <div class="logo-texto">SUPERBUSCONECT</div>
+              <div class="nombre-empresa">BusConnect</div>
+              <div class="tipo-servicio">Exclusivo</div>
+            </div>
+
+            <div class="columna-centro">
+              <div class="fila"><span class="titulo">Salida</span><span class="dato">Mié, 12/11 • 16:10 PM</span></div>
+              <div class="fila"><span class="titulo">Asiento</span><span class="dato">140° • 160°</span></div>
+              <div class="fila"><span class="titulo">Disponibles</span><span class="dato">40 asientos</span></div>
+              <div class="fila"><span class="titulo">Duración</span><span class="dato">16 hrs aprox</span></div>
+            </div>
+
+            <div class="columna-derecha">
+              <div class="precios">
+                <span class="precio-actual">S/ 92</span>
+              </div>
+              <button class="boton-comprar">COMPRAR</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- TARJETAS - SÚPER EXCLUSIVO -->
+        <article class="tarjeta super-exclusivo">
+          <span class="etiqueta-ubicacion">Lima (28 de Julio)</span>
+          <div class="contenido-tarjeta">
+            <div class="columna-izquierda">
+              <div class="logo-texto">SUPERBUSCONECT</div>
+              <div class="nombre-empresa">BusConnect</div>
+              <div class="tipo-servicio">Súper Exclusivo</div>
+            </div>
+
+            <div class="columna-centro">
+              <div class="fila"><span class="titulo">Salida</span><span class="dato">Mié, 12/11 • 15:00 PM</span></div>
+              <div class="fila"><span class="titulo">Asiento</span><span class="dato">160° • 180°</span></div>
+              <div class="fila"><span class="titulo">Disponibles</span><span class="dato">39 asientos</span></div>
+              <div class="fila"><span class="titulo">Duración</span><span class="dato">18 hrs aprox</span></div>
+            </div>
+
+            <div class="columna-derecha">
+              <div class="precios">
+                <span class="precio-actual">S/ 110</span>
+              </div>
+              <button class="boton-comprar">COMPRAR</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta super-exclusivo">
+          <span class="etiqueta-ubicacion">Lima (Plaza Norte)</span>
+          <div class="contenido-tarjeta">
+            <div class="columna-izquierda">
+              <div class="logo-texto">SUPERBUSCONECT</div>
+              <div class="nombre-empresa">BusConnect</div>
+              <div class="tipo-servicio">Súper Exclusivo</div>
+            </div>
+
+            <div class="columna-centro">
+              <div class="fila"><span class="titulo">Salida</span><span class="dato">Mié, 12/11 • 16:40 PM</span></div>
+              <div class="fila"><span class="titulo">Asiento</span><span class="dato">160° • 180°</span></div>
+              <div class="fila"><span class="titulo">Disponibles</span><span class="dato">37 asientos</span></div>
+              <div class="fila"><span class="titulo">Duración</span><span class="dato">17 hrs aprox</span></div>
+            </div>
+
+            <div class="columna-derecha">
+              <div class="precios">
+                <span class="precio-actual">S/ 115</span>
+              </div>
+              <button class="boton-comprar">COMPRAR</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+
 </body>
 </html>
