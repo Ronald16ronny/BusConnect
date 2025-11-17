@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Empresa de Buses</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="panel izquierda" id="panelRegistro">
+        <h2>Registrarse</h2>
+
+        <form id="registroForm">
+            <input type="text" id="regNombre" name="nombre" placeholder="Nombre completo" required>
+            <input type="email" id="regCorreo" name="correo" placeholder="Correo electrónico" required>
+            <input type="password" id="regPassword" name="password" placeholder="Contraseña (mín. 6 caracteres)" required>
+            <input type="password" id="regConfirmPassword" name="confirmPassword" placeholder="Confirmar contraseña" required>
+            
+            <p id="mensajeError" class="mensaje-error"></p>
+
+            <button type="submit" class="btn naranja" id="btnRegistrarse">REGISTRARSE</button>
+        </form>
+    </div>
+
+    <button id="switchBtn" class="switch">></button>
+
+    <div class="panel derecha" id="panelLogin">
+        <h2>Iniciar Sesión</h2>
+        <button class="btn facebook">Acceder con Facebook</button>
+        <button class="btn twitter">Acceder con Twitter</button>
+        <button class="btn correo">Acceder con Correo</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
