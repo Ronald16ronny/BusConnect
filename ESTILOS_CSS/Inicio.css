@@ -172,13 +172,7 @@ input::placeholder {
   font-weight: bold;
   transition: 0.2s;
 }
-.buscar a {
-  color: inherit;
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+
 .buscar:hover {
   opacity: 0.9;
   transform: scale(1.05);
