@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 900px;
+    height: 520px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    transition: 0.4s ease;
+}
+
+.panel {
+    width: 50%;
+    padding: 40px;
+    transition: 0.4s ease;
+}
+
+.izquierda {
+    background: #f9f9f9;
+}
+
+.derecha {
+    background: linear-gradient(135deg, #00dbde 0%, #0099ff 100%);
+    color: white;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid gray;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Botones */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    margin-top: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+}
+
+.naranja {
+    background: #ff7433;
+}
+
+/* Redes sociales */
+.facebook { background: #3b5998; }
+.twitter { background: #1da1f2; }
+.correo  { background: #00bcd4; }
+
+/* Botón central */
+.switch {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    font-size: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+}
+
+/* EFECTO DE DESLIZAR */
+.mover-derecha .izquierda {
+    transform: translateX(-100%);
+}
+
+.mover-derecha .derecha {
+    transform: translateX(-100%);
+}
+
+.mover-derecha #switchBtn {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* Mensaje de error/éxito */
+.mensaje-error {
+    color: #ff3333;
+    font-size: 14px;
+    margin-top: 5px;
+    height: 20px;
+}
