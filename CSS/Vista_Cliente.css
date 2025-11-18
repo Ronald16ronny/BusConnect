@@ -285,18 +285,21 @@ body {
     text-align: center;
 }
 
-.icono_sin {
-    width: 75px;
+.boton_buscar_viaje{
+    background: #079393;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: #fff !important;
+    border: none;
 }
 
-.boton_buscar_viaje {
-    margin-top: 15px;
-    padding: 12px 22px;
-    background: #079393;
-    border: none;
-    border-radius: 10px;
-    color: #fff;
-    cursor: pointer;
+a.buscaviaje{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.icono_sin {
+    width: 75px;
 }
 
 .footer {

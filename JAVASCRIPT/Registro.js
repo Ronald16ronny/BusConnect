@@ -25,32 +25,32 @@ registroForm.addEventListener("submit", (e) => {
     const confirmPassword = inputConfirmPassword.value;
 
     if (nombre.length < 2) {
-        mensajeError.textContent = "⚠️ El nombre debe tener al menos 2 caracteres.";
+        mensajeError.textContent = "El nombre debe tener al menos 2 caracteres.";
         inputNombre.focus();
         return;
     }
 
     const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailValido.test(correo)) {
-        mensajeError.textContent = "⚠️ Ingresa un correo válido.";
+        mensajeError.textContent = "Ingresa un correo válido.";
         inputCorreo.focus();
         return;
     }
 
     if (password.length < 6) {
-        mensajeError.textContent = "⚠️ La contraseña debe tener mínimo 6 caracteres.";
+        mensajeError.textContent = "La contraseña debe tener mínimo 6 caracteres.";
         inputPassword.focus();
         return;
     }
 
     if (password !== confirmPassword) {
-        mensajeError.textContent = "⚠️ Las contraseñas no coinciden.";
+        mensajeError.textContent = "Las contraseñas no coinciden.";
         inputConfirmPassword.focus();
         return;
     }
 
     // Éxito
-    mensajeError.textContent = "✅ ¡Registro exitoso!";
+    mensajeError.textContent = "¡Registro exitoso!";
     mensajeError.style.color = "#0099ff";
 
     setTimeout(() => {
