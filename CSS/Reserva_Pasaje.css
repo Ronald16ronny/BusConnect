@@ -506,6 +506,23 @@ body {
     animation: aparecer .25s ease-out;
 }
 
+.close-asientos {
+    position: absolute;
+    top: -1px;
+    right: 12px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #444;
+    transition: .2s;
+    z-index: 9999;
+}
+
+.close-asientos:hover {
+    color: #000;
+}
+
+
 @keyframes aparecer {
     from { opacity: 0; transform: translateY(-10px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -517,14 +534,152 @@ body {
 .tarjeta.exclusivo .logo-texto { color: #197777; }
 .tarjeta.super-exclusivo .logo-texto { color: #0c3a3f; }
 
-/* RESPONSIVE */
-@media (max-width: 920px) {
-  .contenedor { padding: 12px; }
-  .filtros { display: none; }
-  .contenido-tarjeta { flex-direction: column; gap: 10px; }
-  .columna-izquierda, 
-  .columna-centro, 
-  .columna-derecha { width: 100%; border-left: none; padding-left: 0; }
-  .fila { justify-content: space-between; }
-  .etiqueta-ubicacion { top: 8px; right: 10px; font-size: 12px; padding: 5px 10px; }
+/* =========================================================
+   📱 RESPONSIVE UNIFICADO BUSCONNECT
+   ========================================================= */
+
+/* ========== TABLET / LAPTOP PEQUEÑA (≤1024px) ========== */
+@media (max-width: 1024px) {
+
+  .header-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .search-bar input {
+    width: 160px;
+  }
+
+  .contenedor {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .filtros {
+    width: 100%;
+    display: block;
+  }
+
+  .lista-tarjetas {
+    width: 100%;
+  }
+
+  .contenido-tarjeta {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .columna-centro,
+  .columna-derecha {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+/* ========== CELULAR GRANDE (≤768px) ========== */
+@media (max-width: 768px) {
+
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .search-bar {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contenedor {
+    padding: 10px;
+  }
+
+  .tarjeta {
+    padding: 15px;
+  }
+
+  .contenido-tarjeta {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .columna-izquierda,
+  .columna-centro,
+  .columna-derecha {
+    width: 100%;
+    align-items: center;
+  }
+
+  /* precios */
+  .precios {
+    margin-top: 10px;
+    margin-right: 0;
+  }
+
+  .boton-comprar {
+    width: 100%;
+  }
+
+  /* módulo asientos */
+  .modulo-asientos {
+    padding: 16px;
+  }
+
+  .piso-container {
+    padding: 12px;
+  }
+
+  /* ===== PASOS ===== */
+  .pasos {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .paso {
+    flex: 1;
+    text-align: center;
+    padding: 8px 6px;
+    border-radius: 50px;
+    font-size: 13px;
+  }
+
+  .paso.activo {
+    background: #079393;
+    color: white;
+  }
+}
+
+/* ========== CELULAR PEQUEÑO (≤480px) ========== */
+@media (max-width: 480px) {
+
+  .logo {
+    height: 55px;
+  }
+
+  .paso {
+    font-size: 12px;
+    padding: 7px;
+  }
+
+  .fila {
+    font-size: 12px;
+  }
+
+  .asiento {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  #btnContinuar {
+    width: 100%;
+    font-size: 15px;
+  }
 }
