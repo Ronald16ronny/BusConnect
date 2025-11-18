@@ -8,7 +8,26 @@
 </head>
 <body>
 
-  <header></header>
+  <!-- ========================================================= -->
+  <!-- =================== NUEVO HEADER ======================== -->
+  <!-- ========================================================= -->
+<header class="header">
+    <div class="header-container">
+
+        <!-- LOGO -->
+        <img src="../IMG/Gemini_Generated_Image_35vftd35vftd35vf-removebg-preview (1).png" alt="BusConnect" class="logo">
+
+        <!-- BARRA DE BÚSQUEDA -->
+        <form class="search-bar">
+            <input type="text" placeholder="Origen">
+            <input type="text" placeholder="Destino">
+            <input type="date" placeholder="Salida">
+            <input type="date" placeholder="Retorno">
+            <button type="submit">Buscar</button>
+        </form>
+
+    </div>
+</header>
 
   <main class="contenedor">
     <!-- FILTROS (izquierda) -->
@@ -223,7 +242,116 @@
     </section>
   </main>
 
-  <footer></footer>
+  <!-- ==============================
+     SELECTOR DE ASIENTOS (OCULTO)
+     ============================== -->
+<div id="modulo-asientos" class="modulo-asientos" style="display:none;">
 
+    <!-- TERMINALES -->
+    <div class="terminales">
+        <div>
+            <label>Terminal de salida</label>
+            <input type="text" id="terminalSalida" readonly value="Lima (28 de Julio) - 12:31">
+        </div>
+
+        <div>
+            <label>Terminal de llegada</label>
+            <input type="text" id="terminalLlegada" readonly value="Piura (Loreto) - 05:42">
+        </div>
+    </div>
+
+    <!-- PISOS -->
+    <div class="pisos-botones">
+        <button class="tab-piso activo" data-piso="1">Piso #1</button>
+        <button class="tab-piso" data-piso="2">Piso #2</button>
+    </div>
+
+    <!-- LEYENDA -->
+    <div class="leyenda">
+        <span class="disp"></span> Disponible
+        <span class="sel"></span> Seleccionado
+        <span class="ven"></span> Vendido
+    </div>
+
+    <!-- PISO 1 -->
+    <div class="piso-container" id="piso1">
+
+        <div class="fila-asientos">
+            <div class="asiento disponible">3</div>
+            <div class="asiento vendido">X</div>
+            <div class="asiento vendido">X</div>
+            <div class="asiento disponible">7</div>
+        </div>
+
+        <div class="fila-asientos">
+            <div class="asiento disponible">21</div>
+            <div class="asiento disponible">5</div>
+            <div class="asiento vendido">X</div>
+            <div class="asiento disponible">11</div>
+        </div>
+
+        <div class="fila-asientos">
+            <div class="asiento disponible">1</div>
+            <div class="asiento vendido">X</div>
+            <div class="asiento disponible">9</div>
+            <div class="asiento vendido">X</div>
+        </div>
+
+    </div>
+
+    <!-- PISO 2 (inicialmente oculto) -->
+    <div class="piso-container" id="piso2" style="display:none;">
+        <div class="fila-asientos">
+            <div class="asiento disponible">101</div>
+            <div class="asiento disponible">102</div>
+            <div class="asiento vendido">X</div>
+            <div class="asiento disponible">103</div>
+        </div>
+        <div class="fila-asientos">
+            <div class="asiento disponible">201</div>
+            <div class="asiento vendido">X</div>
+            <div class="asiento disponible">205</div>
+            <div class="asiento disponible">207</div>
+        </div>
+    </div>
+
+    <!-- BOTÓN FINAL -->
+    <div class="continuar-compra">
+        <button id="btnContinuar">CONTINUAR: S/0</button>
+        <p>N° de asientos seleccionados: <span id="cantidadAsientos">0</span></p>
+    </div>
+
+</div>
+
+
+  <!-- ========================================================= -->
+  <!-- =================== NUEVO FOOTER ======================== -->
+  <!-- ========================================================= -->
+  <footer class="bc-footer">
+      <div class="bc-footer-contenido">
+
+          <div class="footer-seccion">
+              <h3>BusConnect</h3>
+              <p>Tu mejor opción para viajar seguro y cómodo.</p>
+          </div>
+
+          <div class="footer-seccion">
+              <h3>Información</h3>
+              <p><a href="#">Preguntas frecuentes</a></p>
+              <p><a href="#">Términos y condiciones</a></p>
+              <p><a href="#">Políticas de privacidad</a></p>
+          </div>
+
+          <div class="footer-seccion">
+              <h3>Contacto</h3>
+              <p>Tel: +51 999 999 999</p>
+              <p>Email: contacto@busconnect.com</p>
+          </div>
+
+      </div>
+
+      <p class="bc-footer-copy">© 2025 BusConnect - Todos los derechos reservados</p>
+  </footer>
+  <script src="../JAVASCRIPT/Reserva_Pasaje.js"></script>
 </body>
 </html>

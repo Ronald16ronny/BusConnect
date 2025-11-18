@@ -11,9 +11,140 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* HEADER y FOOTER (vacíos) */
-header, footer {
-  height: 60px;
+/* ===========================
+   HEADER ESTILO BUSCONNECT
+   =========================== */
+.header {
+    background: #f9ffff;
+    padding: 14px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    width: 92%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo izquierda – buscador derecha */
+    gap: 60px;
+}
+
+/* LOGO */
+.logo {
+    height: 70px;
+    width: auto;
+    margin-left: 0;
+}
+
+/* ============= SEARCH BAR ============= */
+.search-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 10px 12px;
+    border: 2px solid #06dbb8;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    width: 130px;
+    transition: .2s;
+}
+.search-bar input:focus { border-color: #079393; }
+
+.search-bar button {
+    padding: 10px 18px;
+    background: #06dbb8;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+}
+.search-bar button:hover { background: #045e5e; }
+
+/* ===========================
+        FOOTER REAL (ÚNICO)
+   =========================== */
+.bc-footer {
+    width: 100%;
+    background: linear-gradient(90deg, #079393, #06dbb8);
+    padding: 40px 25px 20px;
+    margin-top: 40px;
+    color: white;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.18);
+}
+
+.bc-footer-contenido {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-seccion h3,
+.footer-seccion h4 {
+    margin-bottom: 8px;
+    font-weight: 900;
+}
+
+.footer-seccion p { margin: 4px 0; }
+
+.footer-seccion a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+}
+.footer-seccion a:hover { opacity: 1; }
+
+.bc-footer-copy {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.35);
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* LOGO IZQUIERDA FOOTER */
+.bc-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bc-logo-img {
+    height: 48px;
+    width: auto;
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.25));
+}
+
+.bc-logo-text {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+/* =======================
+          MENÚ
+   ======================= */
+.bc-menu a {
+    color: white;
+    font-weight: 700;
+    margin-left: 22px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: opacity .15s ease, transform .15s ease;
+}
+.bc-menu a:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
 }
 
 /* CONTENEDOR PRINCIPAL */
@@ -35,25 +166,15 @@ header, footer {
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   transition: transform .18s ease, box-shadow .18s ease;
 }
+.filtros:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 12px 30px rgba(0,0,0,0.07); 
+}
+.filtros h3 { margin-bottom: 12px; color: #222; }
 
-.filtros:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.07); }
-
-.filtros h3 { 
-  margin-bottom: 12px; 
-  color: #222; 
-}
-.grupo-filtro { 
-  margin-bottom: 12px; 
-}
-.grupo-filtro h4 { 
-  font-size: 14px; 
-  color: #444; 
-  margin-bottom: 6px; 
-}
-.grupo-filtro ul { 
-  list-style: none; 
-  padding-left: 0; 
-}
+.grupo-filtro { margin-bottom: 12px; }
+.grupo-filtro h4 { font-size: 14px; color: #444; margin-bottom: 6px; }
+.grupo-filtro ul { list-style: none; }
 .grupo-filtro li {
   padding: 6px 6px;
   font-size: 14px;
@@ -71,7 +192,6 @@ header, footer {
 /* ========== RESULTADOS ========== */
 .resultados { flex: 1; }
 
-/* Pasos */
 .pasos {
   display: flex;
   gap: 12px;
@@ -88,18 +208,15 @@ header, footer {
   font-weight: 700;
   font-size: 14px;
 }
-.paso.activo { background: #5b2cb0; 
-  color: #fff; 
-}
+.paso.activo { background: #079393; color: #fff; }
 
-/* ========== LISTA DE TARJETAS ========== */
+/* TARJETAS */
 .lista-tarjetas { 
   display: flex; 
   flex-direction: column; 
   gap: 16px; 
 }
 
-/* TARJETA (base) */
 .tarjeta {
   position: relative;
   background: #fff;
@@ -107,19 +224,17 @@ header, footer {
   padding: 18px 20px;
   box-shadow: 0 8px 22px rgba(0,0,0,0.04);
   transition: transform .12s ease, box-shadow .12s ease;
-  overflow: visible;
 }
-.tarjeta:hover { 
-  transform: translateY(-6px); 
-  box-shadow: 0 18px 48px rgba(0,0,0,0.07); 
+.tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 48px rgba(0,0,0,0.07);
 }
 
-/* etiqueta ubicación (arriba derecha estilo burbuja) */
 .etiqueta-ubicacion {
   position: absolute;
   top: -10px;
   right: 15px;
-  background: #4b0082;
+  background: #079393;
   color: white;
   font-size: 13px;
   font-weight: bold;
@@ -128,7 +243,6 @@ header, footer {
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-/* Contenido dividido en 3 columnas: izquierda - centro - derecha */
 .contenido-tarjeta {
   display: flex;
   gap: 18px;
@@ -139,11 +253,10 @@ header, footer {
 /* COLUMNA IZQUIERDA */
 .columna-izquierda {
   display: flex;
-  flex-direction: column; /* uno debajo del otro */
-  align-items: center; /* centrado horizontal */
-  justify-content: center; /* centrado vertical */
-  text-align: center; /* centra el texto */
-  gap: 15px; 
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
 }
 .logo-texto {
   font-weight: 900;
@@ -151,27 +264,22 @@ header, footer {
   color: #2a7bd6;
   font-size: 18px;
 }
-.nombre-empresa { 
-  font-weight: 700; 
-  color: #444; 
-  font-size: 14px; 
-}
+.nombre-empresa { font-weight: 700; color: #444; font-size: 14px; }
 .tipo-servicio {
   background: #fbf0ff;
-  color: #6b2a8a;
+  color: #01aa9c;
   padding: 5px 8px;
   border-radius: 10px;
   font-weight: 800;
   font-size: 12px;
 }
 
-/* COLUMNA CENTRO */
+/* COLUMNA CENTRAL */
 .columna-centro {
   width: 52%;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding-left: 8px;
   border-left: 1px solid #eee;
   padding-left: 18px;
 }
@@ -182,15 +290,8 @@ header, footer {
   font-size: 14px;
   color: #444;
 }
-.titulo { color: #777; 
-  font-weight: 800; 
-  width: 24%; 
-}
-.dato { color: #333; 
-  font-weight: 700; 
-  text-align: right;
-  width: 72%; 
-}
+.titulo { color: #777; font-weight: 800; width: 24%; }
+.dato { color: #333; font-weight: 700; text-align: right; width: 72%; }
 
 /* COLUMNA DERECHA */
 .columna-derecha {
@@ -204,22 +305,19 @@ header, footer {
 /* PRECIOS */
 .precios {
   display: flex;
-  align-items: center;
-  justify-content: flex-end; /* 🔹 Asegura que quede alineado a la derecha */
-  margin-top: 35px; /* 🔹 Baja el precio */
-  margin-right: 10px; /* 🔹 Espacio entre el precio y el botón */
+  justify-content: flex-end;
+  margin-top: 35px;
+  margin-right: 10px;
 }
-
 .precios span {
   font-size: 18px;
   font-weight: bold;
-  color: #4b0082;
+  color: #013634;
 }
 
-
-/* BOTÓN COMPRAR */
+/* BOTÓN */
 .boton-comprar {
-  background: linear-gradient(180deg,#ff007f 0%,#e6006a 100%);
+  background: linear-gradient(180deg,#06dbb8 0%, #05c8a9 100%);
   color: white;
   border: none;
   padding: 9px 14px;
@@ -229,23 +327,204 @@ header, footer {
   transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
 }
 .boton-comprar:hover {
-  background: linear-gradient(180deg, #cc0060 0%, #99004a 100%); /* 🔹 tono más oscuro */
+  background: linear-gradient(180deg, #06dbb8 0%, #045f5f 100%);
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(176, 0, 82, 0.25);
 }
 
+/* ============================================
+   MODULO DE SELECCION DE ASIENTOS (BUSCONNECT)
+   ============================================ */
 
-/* Variantes por tipo (colores sutiles en el título o borde) */
-.tarjeta.economico .logo-texto { color: #f57c00; }
-.tarjeta.exclusivo .logo-texto { color: #d41b8f; }
-.tarjeta.super-exclusivo .logo-texto { color: #5b2cb0; }
+.modulo-asientos {
+    margin-top: 25px;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    border: 2px solid #06dbb8;
+}
+
+/* TERMINALES */
+.terminales {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.terminales div {
+    flex: 1;
+}
+
+.terminales label {
+    font-weight: 600;
+    color: #094e4e;
+}
+
+.terminales input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #06dbb8;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    background: #f4ffff;
+}
+
+/* PISOS */
+.pisos-botones {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.tab-piso {
+    border: none;
+    padding: 8px 18px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #d2fffa;
+    color: #045e5e;
+    transition: .2s;
+}
+
+.tab-piso.activo {
+    background: #06dbb8;
+    color: white;
+}
+
+/* LEYENDA */
+.leyenda {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.leyenda span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+}
+
+.leyenda .disp {
+    background: #06dbb8;
+}
+
+.leyenda .sel {
+    background: #43206c;
+}
+
+.leyenda .ven {
+    background: #bbbbbb;
+}
+
+/* CONTENEDOR DE PISOS */
+.piso-container {
+    padding: 15px;
+    background: #f8ffff;
+    border-radius: 10px;
+    border: 1px solid #c2f6ef;
+    margin-bottom: 20px;
+}
+
+/* FILAS DE ASIENTOS */
+.fila-asientos {
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* ASIENTOS */
+.asiento {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.asiento.disponible {
+    background: #06dbb8;
+    color: white;
+}
+
+.asiento.disponible:hover {
+    background: #079f96;
+}
+
+.asiento.seleccionado {
+    background: #43206c !important;
+    color: white;
+}
+
+.asiento.vendido {
+    background: #cccccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* BOTÓN CONTINUAR */
+.continuar-compra {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#btnContinuar {
+    width: 260px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #06dbb8;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+#btnContinuar:hover {
+    background: #034d4d;
+}
+
+.modulo-asientos {
+    position: relative;
+    margin-top: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,.15);
+    animation: aparecer .25s ease-out;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Variantes */
+.tarjeta.economico .logo-texto { color: #2BE7C9; }
+.tarjeta.exclusivo .logo-texto { color: #197777; }
+.tarjeta.super-exclusivo .logo-texto { color: #0c3a3f; }
 
 /* RESPONSIVE */
 @media (max-width: 920px) {
   .contenedor { padding: 12px; }
-  .filtros { display: none; } /* oculta filtros para pantallas pequeñas */
-  .contenido-tarjeta { flex-direction: column; align-items: stretch; gap: 10px; }
-  .columna-izquierda, .columna-centro, .columna-derecha { width: 100%; border-left: none; padding-left: 0; }
+  .filtros { display: none; }
+  .contenido-tarjeta { flex-direction: column; gap: 10px; }
+  .columna-izquierda, 
+  .columna-centro, 
+  .columna-derecha { width: 100%; border-left: none; padding-left: 0; }
   .fila { justify-content: space-between; }
   .etiqueta-ubicacion { top: 8px; right: 10px; font-size: 12px; padding: 5px 10px; }
 }
