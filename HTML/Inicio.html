@@ -19,7 +19,7 @@
         <a href="../HTML/Inicio.html" style="color: #044478; font-weight: bold;">Inicio</a>
         <a href="../HTML/Reserva_Pasaje.html">Reservar</a>
         <a href="../HTML/Envios.html">Envíos</a>
-        <a href="../HTML/Registro.html" class="botonLogin">Registrarse</a>
+        <a href="../HTML/Inicio_Secion.html" class="botonLogin">Registrarse</a>
       </nav>
     </div>
   </header>
@@ -45,22 +45,22 @@
   <div class="buscador">
     <div class="campo">
       <label><i class="fa-solid fa-location-dot"></i> Origen</label>
-      <input type="text" placeholder="Ingrese una ciudad">
+      <input id="origen" type="text" placeholder="Ingrese una ciudad">
     </div>
 
     <div class="campo">
       <label><i class="fa-solid fa-location-dot"></i> Destino</label>
-      <input type="text" placeholder="Ingrese el destino">
+      <input id="destino" type="text" placeholder="Ingrese el destino">
     </div>
 
     <div class="campo">
       <label><i class="fa-solid fa-calendar-day"></i> Salida</label>
-      <input type="date" value="2025-11-02">
+      <input id="salida" type="date" value="2025-11-02">
     </div>
 
     <div class="campo">
       <label><i class="fa-solid fa-calendar-day"></i> Retorno</label>
-      <input type="date" placeholder="Opcional">
+      <input id="retorno" type="date" placeholder="Opcional">
     </div>
 
     <button class="buscar"><a href="Reserva_Pasaje.html">Buscar</a>
@@ -110,6 +110,6 @@
       <a href="#"><img src="../IMG/whatsapp.png" alt="WhatsApp"></a>
     </div>
   </footer>
-
+<script src="../JAVASCRIPT/inicio.js"></script>
 </body>
 </html>
