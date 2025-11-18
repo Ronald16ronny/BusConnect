@@ -6,7 +6,6 @@ btnSwitch.addEventListener("click", () => {
     contenedor.classList.toggle("mover-derecha");
 });
 
-
 // --- VALIDACIÓN SIMPLE DEL REGISTRO ---
 const registroForm = document.getElementById("registroForm");
 const inputNombre = document.getElementById("regNombre");
