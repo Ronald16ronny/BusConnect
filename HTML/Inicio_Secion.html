@@ -1,11 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - BusConnect</title>
+  <link rel="stylesheet" href="../CSS/Inicio_Secion.css">
 </head>
 <body>
-    <p>hola como estas</p>
+  <!-- CABECERA -->
+  <header class="cabecera">
+    <div class="container_cabecera">
+      <div class="logo">
+        <img src="../IMG/Gemini_Generated_Image_35vftd35vftd35vf-removebg-preview (1).png" alt="Logo BusConnect">
+      </div>
+      <nav class="nav">
+        <a href="../HTML/Inicio.html">Inicio</a>
+        <a href="#">Reservar</a>
+        <a href="#">Envíos</a>
+        <a href="#" class="botonLogin" style="color: #c9fff7;">Iniciar Sesión</a>
+      </nav>
+    </div>
+  </header>
+<!-- CONTENIDO PRINCIPAL -->
+  <div class="contenedor-principal">
+    <div class="contenedor-login">
+      <div class="imagen-login">
+        <img src="../IMG/WhatsApp Image 2025-11-17 at 20.54.03.jpeg" alt="Autobús BusConnect">
+      </div>
+      <div class="formulario-login">
+        <h1>Iniciar Sesión</h1>
+        <p>Ingresa a tu cuenta para gestionar tus reservas</p>
+        <form id="formLogin">
+          <div class="campo-formulario">
+            <label for="email"><i class="fas fa-envelope"></i> Correo electrónico</label>
+            <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+          </div>
+          <div class="campo-formulario">
+            <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+            <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+            <span class="mostrar-password" id="togglePassword">
+              <i class="fas fa-eye"></i>
+            </span>
+          </div>
+          <div class="opciones">
+            <label class="recordar">
+              <input type="checkbox" id="recordar">
+              <span class="checkmark"></span>
+              Recordar mi cuenta
+            </label>
+            <a href="#" class="olvidaste">¿Olvidaste tu contraseña?</a>
+          </div>
+          <button type="submit" class="btn-login">
+            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+          </button>
+          <div class="separador">
+            <span>o inicia sesión con</span>
+          </div>
+          <div class="login-social">
+            <button type="button" class="btn-social google">
+              <i class="fab fa-google"></i> Google
+            </button>
+            <button type="button" class="btn-social facebook">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </button>
+          </div>
+          <div class="registro-link">
+            <p>¿No tienes una cuenta? <a href="Registro.html">Regístrate aquí</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- FOOTER -->
+  <footer class="footer">
+    <div class="marca">
+      <p>© 2025 BusConnect</p>
+    </div>
+    <div class="contactos">
+      <p>
+        <a href="mailto:busconnect@reservabuses.pe" class="correo">busconnect@reservabuses.pe</a>
+      </p>
+    </div>
+    <div class="redes">
+      <a href="#"><img src="../IMG/facebook.png" alt="facebook"></a>
+      <a href="#"><img src="../IMG/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="../IMG/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="../IMG/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="../IMG/whatsapp.png" alt="WhatsApp"></a>
+    </div>
+  </footer>
+
+  <script src="../JAVASCRIPT/Inicio_Sesion.js"></script>
 </body>
 </html>
