@@ -1,3 +1,4 @@
+/* ------------------ RESET ------------------ */
 * {
     margin: 0;
     padding: 0;
@@ -5,18 +6,21 @@
     font-family: Arial, sans-serif;
 }
 
+/* ------------------ BODY ------------------ */
 body {
-    background: #e8e8e8;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background: url('../IMG/miraflores-lima-city.jpg') no-repeat center center/cover; /* Fondo de pantalla */
 }
 
+/* ------------------ CONTENEDOR ------------------ */
 .container {
     width: 900px;
+    max-width: 90%;
     height: 520px;
-    background: white;
+    background: rgba(255,255,255,0.95); /* Semi-transparente para ver fondo */
     border-radius: 12px;
     overflow: hidden;
     display: flex;
@@ -24,22 +28,17 @@ body {
     transition: 0.4s ease;
 }
 
+/* ------------------ PANEL ------------------ */
 .panel {
     width: 50%;
     padding: 40px;
     transition: 0.4s ease;
 }
 
-.izquierda {
-    background: #f9f9f9;
-}
+.izquierda { background: #b9f5ea; }
+.derecha { background: #06dbb8; color: white; }
 
-.derecha {
-    background: linear-gradient(135deg, #00dbde 0%, #0099ff 100%);
-    color: white;
-}
-
-/* Inputs */
+/* ------------------ INPUTS ------------------ */
 input {
     width: 100%;
     margin: 15px 0;
@@ -50,7 +49,7 @@ input {
     font-size: 16px;
 }
 
-/* Botones */
+/* ------------------ BOTONES ------------------ */
 .btn {
     width: 100%;
     padding: 12px;
@@ -61,17 +60,37 @@ input {
     color: white;
     font-size: 15px;
 }
+.naranja { background: #110dda; }
 
-.naranja {
-    background: #ff7433;
+/* ------------------ BOTONES SOCIALES ------------------ */
+.social-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border: 3px solid #00e5d4;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
+.icono-btn { width: 22px; height: 22px; }
 
-/* Redes sociales */
-.facebook { background: #3b5998; }
-.twitter { background: #1da1f2; }
-.correo  { background: #00bcd4; }
+.facebook-btn { background: #1877f2; }
+.twitter-btn { background: #1da1f2; }
+.instagram-btn { background: #e4405f; }
+.correo-btn { background: #ff9800; }
 
-/* Botón central */
+.facebook-btn:hover { background: #145db3; }
+.twitter-btn:hover { background: #0c85d0; }
+.instagram-btn:hover { background: #c12d4c; }
+.correo-btn:hover { background: #e68900; }
+
+/* ------------------ BOTÓN CENTRAL ------------------ */
 .switch {
     position: absolute;
     left: 50%;
@@ -88,23 +107,52 @@ input {
     transition: 0.3s ease;
 }
 
-/* EFECTO DE DESLIZAR */
-.mover-derecha .izquierda {
-    transform: translateX(-100%);
-}
+/* ------------------ SLIDER ------------------ */
+.mover-derecha .izquierda { transform: translateX(-100%); }
+.mover-derecha .derecha { transform: translateX(-100%); }
+.mover-derecha #switchBtn { transform: translate(-50%, -50%) rotate(180deg); }
 
-.mover-derecha .derecha {
-    transform: translateX(-100%);
-}
-
-.mover-derecha #switchBtn {
-    transform: translate(-50%, -50%) rotate(180deg);
-}
-
-/* Mensaje de error/éxito */
+/* ------------------ MENSAJE DE ERROR ------------------ */
 .mensaje-error {
     color: #ff3333;
     font-size: 14px;
     margin-top: 5px;
     height: 20px;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        border-radius: 12px;
+    }
+
+    .panel {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .switch {
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    input, .btn, .social-btn {
+        font-size: 14px;
+    }
+
+    .switch {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
 }

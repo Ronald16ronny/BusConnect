@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - Empresa de Buses</title>
+    <title>Registro y Login - Empresa de Buses</title>
     <link rel="stylesheet" href="../CSS/Reguistro.css">
 </head>
 <body>
 
-<div class="container">
+<div class="container" id="contenedor">
 
+    <!-- PANEL IZQUIERDO -->
     <div class="panel izquierda" id="panelRegistro">
         <h2>Registrarse</h2>
 
@@ -18,20 +19,44 @@
             <input type="email" id="regCorreo" name="correo" placeholder="Correo electrónico" required>
             <input type="password" id="regPassword" name="password" placeholder="Contraseña (mín. 6 caracteres)" required>
             <input type="password" id="regConfirmPassword" name="confirmPassword" placeholder="Confirmar contraseña" required>
-            
+
             <p id="mensajeError" class="mensaje-error"></p>
 
             <button type="submit" class="btn naranja" id="btnRegistrarse">REGISTRARSE</button>
         </form>
     </div>
 
+    <!-- BOTÓN CENTRAL -->
     <button id="switchBtn" class="switch">></button>
 
+    <!-- PANEL DERECHO -->
     <div class="panel derecha" id="panelLogin">
         <h2>Iniciar Sesión</h2>
-        <button class="btn facebook">Acceder con Facebook</button>
-        <button class="btn twitter">Acceder con Twitter</button>
-        <button class="btn correo">Acceder con Correo</button>
+
+        <!-- FACEBOOK -->
+        <a href="https://www.facebook.com/login" target="_blank" class="social-btn facebook-btn">
+            <span>Acceder con Facebook</span>
+            <img src="../IMG/facebook.png" alt="Facebook" class="icono-btn">
+        </a>
+
+        <!-- TWITTER -->
+        <a href="https://twitter.com/login" target="_blank" class="social-btn twitter-btn">
+            <span>Acceder con Twitter</span>
+            <img src="../IMG/twit.png" alt="Twitter" class="icono-btn">
+        </a>
+
+        <!-- INSTAGRAM -->
+        <a href="https://www.instagram.com/accounts/login/" target="_blank" class="social-btn instagram-btn">
+            <span>Acceder con Instagram</span>
+            <img src="../IMG/instagram.png" alt="Instagram" class="icono-btn">
+        </a>
+
+        <!-- CORREO -->
+        <a href="mailto:tucorreo@ejemplo.com" target="_blank" class="social-btn correo-btn">
+            <span>Acceder con Correo</span>
+            <img src="../IMG/mail.png" alt="Correo" class="icono-btn">
+        </a>
+
     </div>
 
 </div>
