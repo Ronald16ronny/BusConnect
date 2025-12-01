@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
 
     let precioBase = 0;
     let seleccionados = [];
@@ -10,14 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==================================================
     // CLICK EN COMPRAR —> MOSTRAR MÓDULO
     // ==================================================
-    document.addEventListener("click", (e) => {
+    document.addEventListener("click", function(e) {
 
         if (e.target.classList.contains("boton-comprar")) {
 
             const tarjeta = e.target.closest(".tarjeta");
 
             // OBTENER PRECIO REAL
-            let txt = tarjeta.querySelector(".precio-actual").innerText;
+            const txt = tarjeta.querySelector(".precio-actual").innerText;
             precioBase = parseFloat(txt.replace("S/ ", ""));
 
             // reset
@@ -26,38 +26,41 @@ document.addEventListener("DOMContentLoaded", () => {
             btnContinuar.textContent = "CONTINUAR: S/0";
 
             // COLOCAR EL MÓDULO DEBAJO DE LA TARJETA
-            tarjeta.insertAdjacentElement("afterend", modulo);
+            tarjeta.parentNode.insertBefore(modulo, tarjeta.nextSibling);
             modulo.style.display = "block";
         }
 
-// Cerrar módulo con la X
-if (e.target.classList.contains("close-asientos")) {
-    modulo.style.display = "none";
-}
+        // Cerrar módulo con la X
+        if (e.target.classList.contains("close-asientos")) {
+            modulo.style.display = "none";
+        }
 
     });
 
     // ==================================================
     // SELECCIÓN DE ASIENTOS
     // ==================================================
-    document.querySelectorAll(".asiento").forEach(a => {
-        a.addEventListener("click", () => {
+    const asientos = document.querySelectorAll(".asiento");
+    for (let i = 0; i < asientos.length; i++) {
+        const a = asientos[i];
+        a.addEventListener("click", function() {
             if (a.classList.contains("vendido")) return;
 
             if (a.classList.contains("seleccionado")) {
                 a.classList.remove("seleccionado");
-                seleccionados = seleccionados.filter(n => n !== a.textContent);
+                const index = seleccionados.indexOf(a.textContent);
+                if (index > -1) seleccionados.splice(index, 1);
             } else {
                 a.classList.add("seleccionado");
                 seleccionados.push(a.textContent);
             }
 
-            let total = seleccionados.length * precioBase;
+            const total = seleccionados.length * precioBase;
 
             cantidadSpan.textContent = seleccionados.length;
-            btnContinuar.textContent = `CONTINUAR: S/${total}`;
+            btnContinuar.textContent = "CONTINUAR: S/" + total;
         });
-    });
+    }
 
     // ==================================================
     // CAMBIO DE PISOS
@@ -66,9 +69,12 @@ if (e.target.classList.contains("close-asientos")) {
     const piso1 = document.getElementById("piso1");
     const piso2 = document.getElementById("piso2");
 
-    tabs.forEach(btn => {
-        btn.addEventListener("click", () => {
-            tabs.forEach(b => b.classList.remove("activo"));
+    for (let i = 0; i < tabs.length; i++) {
+        const btn = tabs[i];
+        btn.addEventListener("click", function() {
+            for (let j = 0; j < tabs.length; j++) {
+                tabs[j].classList.remove("activo");
+            }
             btn.classList.add("activo");
 
             if (btn.dataset.piso === "1") {
@@ -79,12 +85,12 @@ if (e.target.classList.contains("close-asientos")) {
                 piso2.style.display = "block";
             }
         });
-    });
+    }
 
     // ==================================================
     // BOTÓN CONTINUAR
     // ==================================================
-    btnContinuar.addEventListener("click", () => {
+    btnContinuar.addEventListener("click", function() {
         if (seleccionados.length === 0) {
             alert("Selecciona al menos un asiento");
             return;
