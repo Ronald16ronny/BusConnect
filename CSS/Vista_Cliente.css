@@ -137,6 +137,14 @@ body {
     cursor: pointer;
 }
 
+.centro_botones .icono_cer img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    object-fit: contain;
+    max-width: 100%;
+}
+
 .izq {
     text-align: left;
     font-weight: bold;
