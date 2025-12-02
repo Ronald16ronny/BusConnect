@@ -134,6 +134,13 @@ if (isset($_SESSION['usuario']) && is_array($_SESSION['usuario'])) {
                     <button class="boton_buscar_viaje">
                         <a href="../HTML/Reserva_Pasaje.html" class="buscaviaje">¡Busca tu próximo viaje aquí!</a>
                     </button>
+                
+                </div>
+
+                <!-- Contenedor donde se inyectará la tabla de reservas -->
+                <div id="reservasContainer" style="margin-top:18px; display:none;">
+                    <!-- tabla se inyecta por JS -->
+                </div>
                 </div>
 
             </div>

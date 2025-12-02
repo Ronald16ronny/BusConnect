@@ -293,6 +293,26 @@ body {
     text-align: center;
 }
 
+/* Tabla de reservas */
+.tabla_reservas th {
+    background: linear-gradient(90deg,#f4fffb,#e6fff7);
+    color: #044c49;
+    font-weight: 700;
+}
+.tabla_reservas td, .tabla_reservas th {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eef6f4;
+}
+.tabla_reservas tr:hover td {
+    background: #fbfffe;
+}
+.tabla_reservas {
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(2,60,60,0.06);
+}
+
 .boton_buscar_viaje{
     background: #079393;
     padding: 8px 14px;

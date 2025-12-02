@@ -1,0 +1,76 @@
+[
+    {
+        "created_at": "2025-12-01T22:47:08+01:00",
+        "id_usuario": 1,
+        "origen": "Lima (28 de Julio)",
+        "servicio": "Económico",
+        "salida": "Mié, 12\/11 • 12:00 PM",
+        "asientos": [
+            "7",
+            "1"
+        ],
+        "precio_total": 140
+    },
+    {
+        "created_at": "2025-12-01T22:47:18+01:00",
+        "id_usuario": 1,
+        "origen": "Lima (28 de Julio)",
+        "servicio": "Económico",
+        "salida": "Mié, 12\/11 • 12:00 PM",
+        "asientos": [
+            "7",
+            "1",
+            "11"
+        ],
+        "precio_total": 210
+    },
+    {
+        "created_at": "2025-12-01T22:47:25+01:00",
+        "id_usuario": 1,
+        "origen": "Lima (28 de Julio)",
+        "servicio": "Económico",
+        "salida": "Mié, 12\/11 • 12:00 PM",
+        "asientos": [
+            "7",
+            "1",
+            "11",
+            "X"
+        ],
+        "precio_total": 280
+    },
+    {
+        "created_at": "2025-12-01T22:48:09+01:00",
+        "id_usuario": 1,
+        "origen": "Lima (28 de Julio)",
+        "servicio": "Económico",
+        "salida": "Mié, 12\/11 • 12:00 PM",
+        "asientos": [
+            "21"
+        ],
+        "precio_total": 70
+    },
+    {
+        "created_at": "2025-12-01T22:48:23+01:00",
+        "id_usuario": 1,
+        "origen": "Lima (28 de Julio)",
+        "servicio": "Económico",
+        "salida": "Mié, 12\/11 • 12:00 PM",
+        "asientos": [
+            "21",
+            "X"
+        ],
+        "precio_total": 140
+    },
+    {
+        "created_at": "2025-12-01T22:48:41+01:00",
+        "id_usuario": 1,
+        "origen": "Lima (28 de Julio)",
+        "servicio": "Económico",
+        "salida": "Mié, 12\/11 • 12:00 PM",
+        "asientos": [
+            "X",
+            "21"
+        ],
+        "precio_total": 140
+    }
+]
