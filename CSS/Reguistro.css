@@ -36,35 +36,57 @@ body {
 .container {
     width: 900px;
     max-width: 90%;
-    height: 520px;
+    height: auto;
+    min-height: 600px;
     background: rgba(255,255,255,0.95);
     border-radius: 12px;
     overflow: hidden;
     display: flex;
     position: relative;
     transition: 0.4s ease;
-    margin-top: 20px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* ------------------ PANEL ------------------ */
 .panel {
     width: 50%;
-    padding: 40px;
+    padding: 30px 25px;
     transition: 0.4s ease;
+    overflow-y: auto;
+    max-height: 700px;
 }
 
 .izquierda { background: #b9f5ea; }
 .derecha { background: #06dbb8; color: white; }
 
-/* ------------------ INPUTS ------------------ */
-input {
+/* ------------------ INPUTS Y SELECT ------------------ */
+input, select {
     width: 100%;
-    margin: 15px 0;
+    margin: 8px 0;
     padding: 10px;
     border: none;
     border-bottom: 2px solid gray;
     outline: none;
-    font-size: 16px;
+    font-size: 14px;
+    background: transparent;
+}
+
+select {
+    cursor: pointer;
+}
+
+select option {
+    background: white;
+    color: black;
+}
+
+label {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 2px;
+    font-size: 13px;
+    color: #333;
 }
 
 /* ------------------ BOTONES ------------------ */
@@ -72,13 +94,16 @@ input {
     width: 100%;
     padding: 12px;
     border: none;
-    margin-top: 18px;
+    margin-top: 12px;
     border-radius: 6px;
     cursor: pointer;
     color: white;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
 }
 .naranja { background: #110dda; }
+.naranja:hover { background: #0d0aa0; }
 
 /* ------------------ BOTONES SOCIALES ------------------ */
 .social-btn {
@@ -131,12 +156,14 @@ input {
 .mover-derecha .derecha { transform: translateX(-100%); }
 .mover-derecha #switchBtn { transform: translate(-50%, -50%) rotate(180deg); }
 
-/* ------------------ MENSAJE DE ERROR ------------------ */
+/* ------------------ MENSAJE DE ERROR / ÉXITO ------------------ */
 .mensaje-error {
-    color: #ff3333;
-    font-size: 14px;
-    margin-top: 5px;
-    height: 20px;
+    font-size: 13px;
+    margin-top: 8px;
+    min-height: 20px;
+    padding: 6px;
+    border-radius: 4px;
+    text-align: center;
 }
 
 /* ------------------ RESPONSIVE ------------------ */
