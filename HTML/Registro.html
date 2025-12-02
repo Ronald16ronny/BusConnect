@@ -20,14 +20,21 @@
         <h2>Registrarse</h2>
 
         <form id="registroForm">
-            <input type="text" id="regNombre" name="nombre" placeholder="Nombre completo" required>
+            <input type="text" id="regNombre" name="nombre" placeholder="Nombre" required>
+            <input type="text" id="regApellido" name="apellido" placeholder="Apellido" required>
+            <input type="text" id="regDocumento" name="documento" placeholder="Documento" required>
             <input type="email" id="regCorreo" name="correo" placeholder="Correo electrónico" required>
+            <input type="tel" id="regTelefono" name="telefono" placeholder="Teléfono" required>
+            <label for="regGenero" class="label-genero">Género</label>
+            <select id="regGenero" name="genero" required>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select>
             <input type="password" id="regPassword" name="password" placeholder="Contraseña (mín. 6 caracteres)" required>
             <input type="password" id="regConfirmPassword" name="confirmPassword" placeholder="Confirmar contraseña" required>
-
             <p id="mensajeError" class="mensaje-error"></p>
 
-            <a href="Vista_Cliente.html" class="btn naranja" id="btnRegistrarse">REGISTRARSE</a>
+            <button type="submit" class="btn naranja" id="btnRegistrarse">REGISTRARSE</button>
         </form>
     </div>
 
@@ -36,7 +43,7 @@
 
     <!-- PANEL DERECHO -->
     <div class="panel derecha" id="panelLogin">
-        <h2>Iniciar Sesión</h2>
+        <h2>inicio_Sesión</h2>
 
         <!-- FACEBOOK -->
         <a href="https://www.facebook.com/login" target="_blank" class="social-btn facebook-btn">
@@ -47,7 +54,7 @@
         <!-- TWITTER -->
         <a href="https://twitter.com/login" target="_blank" class="social-btn twitter-btn">
             <span>Acceder con Twitter</span>
-            <img src="../IMG/twit.png" alt="Twitter" class="icono-btn">
+            <img src="../IMG/twitter-brand-new-logo-3-d-with-new-x-shaped-graphic-of-the-world-s-most-popular-social-media-free-png.png" alt="Twitter" class="icono-btn">
         </a>
 
         <!-- INSTAGRAM -->

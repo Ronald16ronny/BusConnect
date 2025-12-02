@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 // Reserva_Pasaje.js
 document.addEventListener("DOMContentLoaded", () => {
+=======
+document.addEventListener("DOMContentLoaded", function() {
+>>>>>>> 95047ec8a3275d436320350ec63f6ba005f9768c
 
     let precioBase = 0;
     let seleccionados = [];
@@ -12,12 +16,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const listaTarjetas = document.getElementById("listaTarjetas");
     const formBuscar = document.getElementById("formBuscar");
 
+<<<<<<< HEAD
     // -------------- Buscar buses (form) --------------
     formBuscar.addEventListener("submit", async e => {
         e.preventDefault();
         const origen = formBuscar.origen.value.trim();
         const destino = formBuscar.destino.value.trim();
         const fecha = formBuscar.fecha.value;
+=======
+    // ==================================================
+    // CLICK EN COMPRAR —> MOSTRAR MÓDULO
+    // ==================================================
+    document.addEventListener("click", function(e) {
+>>>>>>> 95047ec8a3275d436320350ec63f6ba005f9768c
 
         // Ajusta la ruta si tu backend la tiene en otro archivo
         try {
@@ -25,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!res.ok) throw new Error('Error en búsqueda');
             const data = await res.json();
 
+<<<<<<< HEAD
             listaTarjetas.innerHTML = "";
             if (!Array.isArray(data) || data.length === 0) {
                 listaTarjetas.innerHTML = "<p>No se encontraron buses para esos filtros.</p>";
@@ -39,6 +51,55 @@ document.addEventListener("DOMContentLoaded", () => {
             listaTarjetas.innerHTML = "<p>Error al buscar buses. Revisa la consola.</p>";
         }
     });
+=======
+            const tarjeta = e.target.closest(".tarjeta");
+
+            // OBTENER PRECIO REAL
+            const txt = tarjeta.querySelector(".precio-actual").innerText;
+            precioBase = parseFloat(txt.replace("S/ ", ""));
+
+            // reset
+            seleccionados = [];
+            cantidadSpan.textContent = 0;
+            btnContinuar.textContent = "CONTINUAR: S/0";
+
+            // COLOCAR EL MÓDULO DEBAJO DE LA TARJETA
+            tarjeta.parentNode.insertBefore(modulo, tarjeta.nextSibling);
+            modulo.style.display = "block";
+        }
+
+        // Cerrar módulo con la X
+        if (e.target.classList.contains("close-asientos")) {
+            modulo.style.display = "none";
+        }
+
+    });
+
+    // ==================================================
+    // SELECCIÓN DE ASIENTOS
+    // ==================================================
+    const asientos = document.querySelectorAll(".asiento");
+    for (let i = 0; i < asientos.length; i++) {
+        const a = asientos[i];
+        a.addEventListener("click", function() {
+            if (a.classList.contains("vendido")) return;
+
+            if (a.classList.contains("seleccionado")) {
+                a.classList.remove("seleccionado");
+                const index = seleccionados.indexOf(a.textContent);
+                if (index > -1) seleccionados.splice(index, 1);
+            } else {
+                a.classList.add("seleccionado");
+                seleccionados.push(a.textContent);
+            }
+
+            const total = seleccionados.length * precioBase;
+
+            cantidadSpan.textContent = seleccionados.length;
+            btnContinuar.textContent = "CONTINUAR: S/" + total;
+        });
+    }
+>>>>>>> 95047ec8a3275d436320350ec63f6ba005f9768c
 
     // -------------- Plantilla tarjeta bus --------------
     function cardBus(bus){
@@ -269,21 +330,42 @@ document.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll(".tab-piso");
     const piso1 = document.getElementById("piso1");
     const piso2 = document.getElementById("piso2");
+<<<<<<< HEAD
     tabs.forEach(btn => {
         btn.addEventListener("click", () => {
             tabs.forEach(b => b.classList.remove("activo"));
+=======
+
+    for (let i = 0; i < tabs.length; i++) {
+        const btn = tabs[i];
+        btn.addEventListener("click", function() {
+            for (let j = 0; j < tabs.length; j++) {
+                tabs[j].classList.remove("activo");
+            }
+>>>>>>> 95047ec8a3275d436320350ec63f6ba005f9768c
             btn.classList.add("activo");
             piso1.style.display = btn.dataset.piso === "1" ? "block" : "none";
             piso2.style.display = btn.dataset.piso === "2" ? "block" : "none";
         });
-    });
+    }
 
+<<<<<<< HEAD
     // -------------- Botón Continuar -> abrir modal de confirmación previa --------------
     const modalConfirmar = document.getElementById('modalConfirmarReserva');
     const listaAsientosElem = document.getElementById('confirmListaAsientos');
     const precioElem = document.getElementById('confirmPrecio');
     const btnConfirmEnviar = document.getElementById('confirmEnviar');
     const btnConfirmCancelar = document.getElementById('confirmCancelar');
+=======
+    // ==================================================
+    // BOTÓN CONTINUAR
+    // ==================================================
+    btnContinuar.addEventListener("click", function() {
+        if (seleccionados.length === 0) {
+            alert("Selecciona al menos un asiento");
+            return;
+        }
+>>>>>>> 95047ec8a3275d436320350ec63f6ba005f9768c
 
     btnContinuar.addEventListener('click', () => {
         if (seleccionados.length === 0) return alert('Selecciona al menos un asiento');
