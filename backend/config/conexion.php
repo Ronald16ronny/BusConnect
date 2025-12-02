@@ -3,7 +3,7 @@ $host = "localhost";
 $usuario = "root";
 $password = "";
 $bd = "busconnect";
-$puerto = 3306;
+$puerto = 3307;
 
 $conn = new mysqli($host, $usuario, $password, $bd, $puerto);
 

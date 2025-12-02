@@ -493,6 +493,31 @@ body {
 }
 .modulo-asientos[data-loading="1"] .spinner { display: block; }
 
+/* === CONTENEDOR DE ASIENTOS POR PISO === */
+#piso1, #piso2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 asientos por fila */
+    gap: 12px;
+    justify-items: center;
+    margin: 16px 0;
+}
+
+/* ESTILO ASIENTO */
+.asiento {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: .18s;
+}
+
+
 @keyframes spin {
   from { transform: translateX(-50%) rotate(0deg); }
   to { transform: translateX(-50%) rotate(360deg); }
